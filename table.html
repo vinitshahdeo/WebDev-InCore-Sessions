@@ -1,122 +1,113 @@
 <!DOCTYPE html>
-<!--Web dev session 1 task-->
 <html>
-<title>Table</title>
 <head>
-
+<title>
+Table format
+</title>
 <style>
-table {
-    width:100%;
+table{ border: 5px solid black;
+  width: 100%;
+margin:center;
+text-align:center;
+max-width:100%;
+height:auto;
+border-collapse: collapse;
 }
-table, td {
-    border: 2px solid #136a8a;
-    border-collapse: collapse;
+table,tr,td,th{
+border: 5px solid black;
+border-color: green;
+margin: center;
+text-align: center;
+border-collapse: collapse;
+background-color: lightblue;
+}
+th,td{
+padding: 5px;
+}
+td{
+font-family: Comic Sans MS;
 }
 th{
-padding: 5px;
-text-align:center;
-border: 2px solid #8c8b8b;
-border-collapse: collapse;
-font-family: 'Montserrat',sans-serif;
+font-family: calibri;
+font-size: 25px;
+background-color: black;
+color: cyan;
 }
-td{ 
-	  color: #136a8a;
-    padding: 10px;
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
+tr.s:hover 
+{
+color: red;
+text-transform: lowercase;
+text-shadow: 5px 5px 3px black;
+font-size:150%;
 }
-
-table tr:nth-child(even) {
-    background-color: #eee;
-}
-table tr:nth-child(even):hover {
-    background-color: #8c8b8b ;
-}
-table tr:nth-child(odd) {
-   background-color:#fff;
-}
-table tr:nth-child(odd):hover {
-   background-color: #41D8D8;
-}
-table th {
-    background: #136a8a; 
-
-    color: white;
-}
-caption{
-	 color: grey;
-    padding: 5px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 26px;
+tr.t:hover
+{
+font-size: 150%;
+color: blue;
+opacity: 0.5;
 }
 </style>
-
 </head>
 <body>
-
-<table style="width:100%">
-  <caption>Student Info</caption>
-  <tr>
-    <th rowspan="2">Name</th>
-    <th rowspan="2">Reg No.</th>
-    <th colspan="2">Contact</th>
-  </tr>
-  <tr>
-    <th>Email</th>
-    <th>Phone</th>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-   <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-   <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
-  <tr>
-    <td>Yashna</td>
-    <td>16BIT0100</td>
-    <td>yashna@gmail.com</td>
-    <td>887085840</td>
-  </tr>
+<table>
+<caption style="color:blue;text-align:center;font-family:verdana;font-size:40px;background-color:lightblue;"><b>STUDENT INFORMATION</b></caption>
+<tr>
+<th rowspan="2">NAME</th>
+<th rowspan="2">REG. NO</th>
+<th colspan="2">CONTACT NO.</th>
+</tr>
+<tr>
+<th>EMAIL</th>
+<th>PHONE</th>
+</tr>
+<tr class="s";class="t";>
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="t">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="s">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="t">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="s">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="t">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="s">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
+<tr class="t">
+<td>SHREYA ANAND</td>
+<td>16BIT0081</td>
+<td>shreya.anand8888@gmail.com</td>
+<td>7092462266</td>
+</tr>
 </table>
-
 </body>
 </html>
