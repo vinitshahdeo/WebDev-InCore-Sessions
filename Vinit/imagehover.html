@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Image Caption on Hover Effect</title>
+  <meta name="author" content="Vinit Shahdeo">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <style>
+    body{
+      background: #e44d26; 
+      background: -webkit-linear-gradient(to right, #e44d26, #f16529); /* Color gradient is used */
+      background: linear-gradient(to right, #e44d26, #f16529); 
+      font-family:'Montserrat', sans-serif;
+      }
+    h1,h2{
+      text-align: center;
+      font-weight: bold;
+      text-transform: capitalize;
+      }
+    li  {
+      list-style:none;
+    }
+
+    .imageChancellor{
+        position:relative;
+        width:400px;
+        height:400px;
+        float:left;
+        margin:10px;
+      }
+/* Fixing image into container */
+    img{
+      width:100%;
+      height:100%;
+    }
+
+/* Subclass of imageChancellor for caption*/
+    .overlayText{
+        position:absolute;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        opacity:0;
+        background:#000000;
+        color:#ffffff;
+        font-size:25px;
+        font-family:'Montserrat',sans-serif;
+        letter-spacing:1px;
+        text-align: center;
+        margin:10px;
+        padding:20px;
+        transition:0.3s ease-in;
+}
+
+.overlayText:hover{
+    opacity: 0.7;
+    cursor:pointer;
+ }
+
+</style>
+</head>
+
+<body>
+  <h1>Image Caption on Hover Effect</h1>
+  <h2>VinnovateIT | Web Dev Incore Session</h2>
+  <ul>
+  <li class="imageChancellor">
+    <img src="http://www.vit.ac.in/images/Leadership/gv.jpg">
+    <a class="overlayText">
+      Our Chancellor<br>
+     G. Viswanathan is the founder and chancellor of VIT University Vellore.
+    </a>
+  <li>
+   
+  <li class="imageChancellor">
+    <img src="http://www.vit.ac.in/images/Leadership/gv.jpg">
+    <a class="overlayText">
+      Our Chancellor<br>
+     G. Viswanathan is the founder and chancellor of VIT University Vellore.
+    </a>
+   </li>   
+ 
+  <li class="imageChancellor">
+    <img src="http://www.vit.ac.in/images/Leadership/gv.jpg">
+    <a class="overlayText"><br>
+     Our Chancellor<br>
+     G. Viswanathan is the founder and chancellor of VIT University Vellore.
+    </a>
+   </li>    
+  
+<ul> 
+</body>
+</html>
