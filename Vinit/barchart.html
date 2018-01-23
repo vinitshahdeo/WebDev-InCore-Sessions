@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bar Chart Creator</title>
+    <style>
+        body{
+            font-family: verdana;
+            
+        }
+        table{
+            
+            text-align: center;
+        }
+        canvas{
+            margin-left: 25%;
+            width:50%;
+            height:50%;
+        }
+        h1{
+            font-family: sans-serif;
+            font-weight: bold;
+            color: teal;
+        }
+        h3{
+            color: darkslategrey;
+        }
+        #myCanvas{
+            color: aqua;
+        }
+        
+.orange {
+background: #ed9d4e; 
+background: -moz-linear-gradient(top,  #ed9d4e 0%, #ed850e 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ed9d4e), color-stop(100%,#ed850e)); 
+color: #fff;
+  
+  &:hover {
+background: #ed850e; 
+background: -moz-linear-gradient(top,  #ed850e 0%, #ed9d4e 100%); 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ed850e), color-stop(100%,#ed9d4e));
+}
+        }
+ .nice-button {
+  text-shadow: 0px -1px 0px darken(@main-color, 20%);
+  text-transform:uppercase;
+  font-size: 20px;
+  padding: .75em 1.5em;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid darken(@main-color, 22%);
+  box-shadow: 0px 4px 0px -1px darken(@main-color, 30%), 0px 4px 5px rgba(0,0,0,.55), inset 0px 0px 0px 1px rgba(255,255,255,.15);
+}
+    </style>
+</head>
+<body>
+    <h1 align="center">Attendance Visualizer</h1>
+    <hr>
+    <h3 align="center">Enter the percentage of your attendance and Visualize using Bar Chart or Pie Chart!</h3>
+    <br>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Attendance %</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mobile App Dev</td>
+                <td><input type="number" id="mone"></td>
+            </tr>
+            <tr>
+                <td>Cyber Security</td>
+                <td><input type="number" id="mtwo"></td>
+            </tr>
+            <tr>
+                <td>Data Mining</td>
+                <td><input type="number" id="mthree"></td>
+            </tr>
+            <tr>
+                <td>Big Data Analytics</td>
+                <td><input type="number" id="mfour"></td>
+            </tr>
+            <tr>
+                <td>Linear Algebra</td>
+                <td><input type="number" id="mfive"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td>Choose Graph: </td>
+                <td>
+                    <div id="graphs">
+                        <input type="radio" name="graph" id="r1"  value="bar">Bar<br>
+                        <input type="radio" name="graph" id="r2"  value="pie">Pie
+                    </div>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><br></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><button id="submit" class="nice-button orange" onclick="sub()">CREATE</button></td>
+                <td><button onClick="reLoad()" class="nice-button orange">RELOAD</button></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <p><center>Click on Create to visualize your attendance!</center></p>
+    <br><br>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        function reLoad(){
+            location.reload();
+        }
+    </script>
+    <script>
+        var inc1 = 0;
+        function sub(){
+            var inc2 = 0;
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            
+            var markone = document.getElementById("mone").value;
+            var marktwo = document.getElementById("mtwo").value;
+            var markthree = document.getElementById("mthree").value;
+            var markfour = document.getElementById("mfour").value;
+            var markfive = document.getElementById("mfive").value;
+            
+            var marks = [markone, marktwo, markthree, markfour, markfive];
+            var subjects = ["MAD", "Data Mining", "Big Data", "Algebra", "Cyber Security"];
+            
+            var colors = ["#ed9d4e", "#008080", "#FF0000","#0000ff","#00ffff"];
+            
+            if(document.getElementById("r1").checked){
+                
+            
+                var width = 30;
+                var currX = 50;
+                var base = 110;
+            
+                for(var i=0; i<marks.length; i++){
+                    var h = marks[i];
+                    var lb = subjects[i];
+                
+                    ctx.font = "8px sans-serif";
+                    ctx.textAlign = "center";
+                    
+                    ctx.fillStyle = colors[i];
+                    
+                    ctx.fillRect(currX, canvas.height - h, width, h + 10);
+                    ctx.stroke();
+                    currX += width+10;
+                }
+                
+            } else if(document.getElementById("r2").checked){
+            
+                var sum = 0;
+                for(var i = 0; i < marks.length; i++){
+                    sum += eval(marks[i]);
+                }
+
+                var lastEnd = 0;
+                for(var i = 0; i < marks.length; i++){
+                    ctx.fillStyle = colors[i];
+                    ctx.beginPath();
+                    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                    ctx.arc(canvas.width / 2, canvas.height / 2, canvas.height / 3, lastEnd, lastEnd + (Math.PI * 2 *(marks[i] / sum)));
+                    ctx.fill();
+                    lastEnd += Math.PI * 2 * (marks[i] / sum);
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>
