@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p> There are two different ways to access an object property: </p>
+<p>You can use person.property or person["property"].</p>
+<p id="demo"></p>
+<script>
+var person = {
+ firstName: "VIT",
+ lastName : "Vellore",
+ id : 1234
+};
+var dx = document.getElementById("demo");
+ /*dx.innerHTML = person.firstName + " " + person.lastName;*/
+dx.innerHTML = person ["firstName"] + " " + person ["lastName"];
+</script>
+</body>
+</html>
